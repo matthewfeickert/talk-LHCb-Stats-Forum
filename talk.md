@@ -52,6 +52,23 @@ NYU
 .kol-1-4.center.bold[Advising]
 
 ---
+# Recent Scikit-HEP project
+
+.kol-1-2.left[
+.bold[Scikit-HEP:]<br>
+A community-driven and community-oriented project with the aim of providing Particle Physics at large with an ecosystem for data analysis in Python
+
+<br><br><br><br><br><br>
+.bold[pyhf:]<br>
+A pure-python implementation of the widely-used HistFactory p.d.f. template described in [CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)
+]
+.kol-1-2.center[
+.width-50[[![scikit-hep_logo](https://scikit-hep.org/assets/images/logo.png)](https://scikit-hep.org/)]
+
+.width-70[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://scikit-hep.org/pyhf/)]
+]
+
+---
 # Enter HistFactory
 
 - A flexible p.d.f. template to build statistical models from binned distributions and data
@@ -109,20 +126,20 @@ $$
 <!--  -->
 .kol-1-2.width-95[
 - First non-ROOT implementation of the HistFactory p.d.f. template
-   - .width-80[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
+   - .width-40[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
 - pure-Python library as second implementation of HistFactory
-  - [`pip install pyhf`](https://diana-hep.org/pyhf/installation.html#install-from-pypi)
+  - [`pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
 ]
 .kol-1-2.center.width-80[
-[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://diana-hep.org/pyhf/)
+[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://scikit-hep.org/pyhf/)
 ]
 <!--  -->
 .kol-1-1[
 - Has a JSON spec that .blue[fully] describes the HistFactory model
    - JSON: Industry standard, parsable by every language, human & machine readable, versionable and easily preserved (HEPData is JSON)
 - Open source tool for all of HEP
-   - Originated from a [DIANA/HEP](https://diana-hep.org/) project fellowship and now an [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported project
+   - Originated from a [DIANA/HEP](https://diana-hep.org/) project fellowship and now an [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
    - Used for reinterpretation in phenomenology paper (DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425))
    - Used internally in ATLAS for pMSSM SUSY large scale reinterpretation
 ]
