@@ -158,7 +158,7 @@ $$
 
 .center.bold[Just click the button!]<br><br><br>
 
-.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-CHEP-2019/master?urlpath=lab)]
+.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)]
 
 ---
 # $CL_{s}$ Example using `pyhf` CLI
