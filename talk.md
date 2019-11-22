@@ -14,26 +14,33 @@ Matthew Feickert<br>
 Month DDth, Year
 
 ---
-# Collaborators
+# pyhf team
 
 <br><br>
 
 .grid[
-.kol-1-3.center[
+.kol-1-4.center[
 .circle.width-80[![Lukas](figures/collaborators/heinrich.jpg)]
 
 [Lukas Heinrich](https://github.com/lukasheinrich)
 
 CERN
 ]
-.kol-1-3.center[
+.kol-1-4.center[
+.circle.width-80[![Matthew](https://avatars2.githubusercontent.com/u/5142394)]
+
+[Matthew Feickert](https://www.matthewfeickert.com/)
+
+Illinois
+]
+.kol-1-4.center[
 .circle.width-80[![Giordon](https://avatars0.githubusercontent.com/u/761483)]
 
 [Giordon Stark](https://github.com/kratsg)
 
 UCSC SCIPP
 ]
-.kol-1-3.center[
+.kol-1-4.center[
 .circle.width-70[![Kyle](figures/collaborators/cranmer.png)]
 
 [Kyle Cranmer](http://theoryandpractice.org/)
@@ -41,6 +48,9 @@ UCSC SCIPP
 NYU
 ]
 ]
+
+.kol-3-4.center.bold[Core Developers]
+.kol-1-4.center.bold[Advising]
 
 ---
 
