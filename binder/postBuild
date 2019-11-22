@@ -1,0 +1,5 @@
+jupyter labextension install jupyterlab_iframe
+jupyter serverextension enable --py jupyterlab_iframe
+
+jupyter notebook --generate-config
+echo "c.JupyterLabIFrame.welcome = 'https://matthewfeickert.github.io/talk-LHCb-Stats-Forum/index.html#10'" >> $HOME/.jupyter/jupyter_notebook_config.py
