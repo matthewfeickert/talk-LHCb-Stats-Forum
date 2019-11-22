@@ -1,17 +1,16 @@
 class: middle, center, title-slide
 count: false
 
-# Talk Template
-Subtitle of talk
+# An introduction to pyhf
 
 <br>
+[Matthew Feickert](https://www.matthewfeickert.com/)<br>(for the dev team)<br><br>
+University of Illinois at Urbana-Champaign
 
-Matthew Feickert<br>
-[matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
+<br><br>
+[LHCb Statistics Forum](https://talk-event-url)
 
-[Talk Event Name](https://talk-event-url)
-
-Month DDth, Year
+November 25th, 2019
 
 ---
 # pyhf team
