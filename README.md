@@ -1,8 +1,10 @@
-# [Talk Summary Title](https://talk-url)
+# [An introduction to pyhf and HistFactory likelihoods](https://talk-url)
 
-Talk given at the [Talk Event](https://talk-event-url)
+Talk given at the [LHCb Statistics Forum](https://talk-event-url)
 
-Viewable online [here](https://matthewfeickert.github.io/talk-template/index.html?p=talk.md)
+Viewable online [here](https://matthewfeickert.github.io/talk-LHCb-Stats-Forum/index.html)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)
 
 ## Acknowledgments
 
