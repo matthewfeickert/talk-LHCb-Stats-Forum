@@ -174,8 +174,7 @@ $$
 
 .center.bold[Just click the button!]<br><br><br>
 
-<!-- .center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)] -->
-.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/drafts/add-first-draft?urlpath=lab)]
+.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)]
 
 ---
 # How to combine likelihoods?
