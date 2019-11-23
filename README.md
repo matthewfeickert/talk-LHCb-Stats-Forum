@@ -1,6 +1,6 @@
 # [An introduction to pyhf and HistFactory likelihoods](https://talk-url)
 
-Talk given at the [LHCb Statistics Forum](https://talk-event-url)
+Talk given at the [LHCb Statistics Forum](https://indico.cern.ch/event/863729/) ![LHCb internal](https://img.shields.io/badge/restricted-LHCb-red.svg)
 
 Viewable online [here](https://matthewfeickert.github.io/talk-LHCb-Stats-Forum/index.html)
 
