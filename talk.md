@@ -2,6 +2,7 @@ class: middle, center, title-slide
 count: false
 
 # An introduction to pyhf
+# and HistFactory likelihoods
 
 <br>
 [Matthew Feickert](https://www.matthewfeickert.com/)<br>(for the dev team)<br><br>
@@ -145,6 +146,21 @@ $$
 ]
 
 ---
+# Will pyhf extend to unbinned models?
+
+<br>
+- No. This is outside the project scope
+- pyhf mission goal: To deliver an intuitive and computationally efficient tool for using HistFactory in physics analyses
+- _Very_ interested in seeing Pythonic tools for unbinned fits in the wider particle physics community
+- We feel that our efforts would be better spent in focusing on building underlying interface libraries for statistical modeling that offer .bold[common APIs] for the growing number of Pythonic libraries in the ecosystem
+
+<br>
+# Why are you talking at an LHCb meeting then?
+
+- Have been told that LHCb uses binned models for _some_ analyses
+- At CHEP 2019 was approached by one such analyst
+
+---
 # Example pyhf JSON spec
 
 .center[<a href="https://carbon.now.sh/?bg=rgba(255%2C255%2C255%2C1)&t=seti&wt=none&l=application%2Fjson&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=3px&ph=1px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=%257B%250A%2520%2520%2520%2520%2522channels%2522%253A%2520%255B%2520%2523%2520List%2520of%2520regions%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%2522name%2522%253A%2520%2522singlechannel%2522%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522samples%2522%253A%2520%255B%2520%2523%2520List%2520of%2520samples%2520in%2520region%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%2522name%2522%253A%2520%2522signal%2522%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522data%2522%253A%2520%255B5.0%252C%252010.0%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2523%2520List%2520of%2520rate%2520factors%2520and%252For%2520systematic%2520uncertainties%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522modifiers%2522%253A%2520%255B%2520%257B%2520%2522name%2522%253A%2520%2522mu%2522%252C%2520%2522type%2522%253A%2520%2522normfactor%2522%252C%2520%2522data%2522%253A%2520null%257D%2520%255D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%2522name%2522%253A%2520%2522background%2522%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522data%2522%253A%2520%255B50.0%252C%252060.0%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522modifiers%2522%253A%2520%255B%2520%257B%2522name%2522%253A%2520%2522uncorr_bkguncrt%2522%252C%2520%2522type%2522%253A%2520%2522shapesys%2522%252C%2520%2522data%2522%253A%2520%255B5.0%252C%252012.0%255D%257D%2520%255D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2522observations%2522%253A%2520%255B%2520%2523%2520Observed%2520data%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%2522name%2522%253A%2520%2522singlechannel%2522%252C%2520%2522data%2522%253A%2520%255B50.0%252C%252060.0%255D%2520%257D%250A%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2522measurements%2522%253A%2520%255B%2520%2523%2520Parameter%2520of%2520interest%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%2522name%2522%253A%2520%2522Measurement%2522%252C%2520%2522config%2522%253A%2520%257B%2522poi%2522%253A%2520%2522mu%2522%252C%2520%2522parameters%2522%253A%2520%255B%255D%257D%2520%257D%250A%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2522version%2522%253A%2520%25221.0.0%2522%2520%2523%2520Version%2520of%2520spec%2520standard%250A%257D">`JSON` defining a single channel, two bin counting experiment with systematics</a>]
@@ -158,18 +174,47 @@ $$
 
 .center.bold[Just click the button!]<br><br><br>
 
-.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)]
+<!-- .center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)] -->
+.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/drafts/add-first-draft?urlpath=lab)]
 
 ---
-# $CL_{s}$ Example using `pyhf` CLI
+# How to combine likelihoods?
 
-.center.width-60[![demo_CLI](figures/carbon_CLI_output.png)]
+- Essentially just concatenate them
 
-<!-- --- -->
-<!-- # Lukas note -->
-<!--  -->
-<!-- - Change the model to give more interesting CLs values -->
-<!-- - c.f. slide 18 from Lukas Higgs Combination talk -->
+<br><br>
+# Is there a pyhf utility for this yet?
+
+- No, but there is a PR to add this functionality into the CLI
+   - [scikit-hep/pyhf PR #617](https://github.com/scikit-hep/pyhf/pull/617)
+- `$ pyhf spec combine spec1.json spec2.json`
+
+---
+# Uncertainty interval generation
+
+.kol-1-2[
+.bold[(pseudo)Frequentist confidence intervals]
+
+- Use the $\\mathrm{CL}_{s}$ method to construct the interval
+   - $\\mathrm{CL}_{s}$ results in overcoverage by construction
+- pyhf offers a CLI for this in addition to the Python API
+   - `pyhf cls spec.json`
+- Returns (for $95\%\\, \\mathrm{CL}$ upper limit):
+   - Expected $\\mathrm{CL}_{s}$ values: $\pm 1\sigma$, $\pm 2\sigma$ (Brazil band), observed $\\mathrm{CL}_s$ value
+
+.bold[Bayesian credible intervals]
+
+- Currently don't support any API for this
+- pyhf plan is to factor out inference and focus on modeling
+- c.f. [H. Dembinski, PyHEP 2019](https://indico.cern.ch/event/833895/contributions/3577810/)
+]
+.kol-1-2[
+.center.width-100[![demo_CLI](figures/carbon_CLI_output.png)]
+]
+
+<!-- - If the likelihood function was stored merely as a function of the model parameters, then it would not be possible to compute coverage probability for frequentist intervals generated from the likelihood function. -->
+<!-- - JSON likelihood contains the data -->
+<!-- - Possible to compute the coverage probability -->
 
 ---
 # JSON Patch for new signal models
