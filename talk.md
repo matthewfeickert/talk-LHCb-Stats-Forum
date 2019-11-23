@@ -294,23 +294,16 @@ $$
 ---
 # Summary
 <!--  -->
+<br><br>
 Through pyhf are able to provide:
 <!--  -->
+- Independent .bold[pure-Python implementation] of HistFactory + hypothesis testing
+- .bold[Efficient] computation with .bold[backend agnostic] API to tensor libraries
 - .bold[JSON specification] of likelihoods
    - human/machine readable, versionable, HEPData friendly, orders of magnitude smaller
 - .bold[Bidirectional translation] of likelihood specifications
    - ROOT workspaces ↔ JSON
-- Independent .bold[pure-Python implementation] of HistFactory + hypothesis testing
-- Publication for the first time of the .bold[full likelihood] of a search for new physics
-
-.kol-1-2.center.width-100[
-[![likelihood_publishing_agreement](figures/likelihood_publishing_agreement.png)](https://cds.cern.ch/record/411537)
-([1st Workshop on Confidence Limits, CERN, 2000](http://inspirehep.net/record/534129))
-]
-.kol-1-2.center.width-85[
-[![PUB_note_cover](figures/PUB_note_cover.png)](https://cds.cern.ch/record/2684863)
-([ATLAS, 2019](https://cds.cern.ch/record/2684863))
-]
+- Publication of the .bold[full likelihood] of physics analysis
 
 ---
 class: end-slide, center
@@ -321,11 +314,6 @@ Backup
 # ROOT + XML to JSON and back
 
 .center.width-70[![flowchart](figures/process.png)]
-
----
-# Best-fit parameter values
-
-.center.width-70[![fit_results](figures/fit_results.png)]
 
 ---
 # JSON Patch files for new signal models
