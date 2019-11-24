@@ -70,7 +70,7 @@ A pure-python implementation of the widely-used HistFactory p.d.f. template desc
 ]
 
 ---
-# Enter HistFactory
+# HistFactory
 
 - A flexible p.d.f. template to build statistical models from binned distributions and data
 - Developed by Cranmer, Lewis, Moneta, Shibata, and Verkerke ([CERN-OPEN-2012-016](http://inspirehep.net/record/1236448))
@@ -146,6 +146,24 @@ $$
 ]
 
 ---
+# Machine Learning Frameworks for Computational Backends
+
+.grid[
+.kol-2-3[
+
+<br><br>
+- All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
+- Using deep learning frameworks as computational backends allows for .bold[exploitation of auto differentiation (autograd) and GPU acceleration]
+- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers
+]
+.kol-1-4.right[
+.width-100[![NumPy](figures/logos/NumPy_logo.svg)]
+.width-100[![PyTorch](figures/logos/Pytorch_logo.svg)]
+.width-100[![Tensorflow](figures/logos/TensorFlow_logo.svg)]
+]
+]
+
+---
 # Will pyhf extend to unbinned models?
 
 <br>
@@ -174,7 +192,8 @@ $$
 
 .center.bold[Just click the button!]<br><br><br>
 
-.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)]
+<!-- .center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)] -->
+.center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/drafts/add-revisions?urlpath=lab)]
 
 ---
 # How to combine likelihoods?
@@ -300,9 +319,11 @@ Through pyhf are able to provide:
 - .bold[Efficient] computation with .bold[backend agnostic] API to tensor libraries
 - .bold[JSON specification] of likelihoods
    - human/machine readable, versionable, HEPData friendly, orders of magnitude smaller
+   - long long term support
 - .bold[Bidirectional translation] of likelihood specifications
    - ROOT workspaces ↔ JSON
 - Publication of the .bold[full likelihood] of physics analysis
+- Transparent .bold[open development] on GitHub
 
 ---
 class: end-slide, center
