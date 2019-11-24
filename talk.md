@@ -311,10 +311,8 @@ $$
 
 ---
 # Summary
-<!--  -->
-<br><br>
+.kol-2-3[
 Through pyhf are able to provide:
-<!--  -->
 - Independent .bold[pure-Python implementation] of HistFactory + hypothesis testing
 - .bold[Efficient] computation with .bold[backend agnostic] API to tensor libraries
 - .bold[JSON specification] of likelihoods
@@ -324,6 +322,12 @@ Through pyhf are able to provide:
    - ROOT workspaces ↔ JSON
 - Publication of the .bold[full likelihood] of physics analysis
 - Transparent .bold[open development] on GitHub
+]
+.kol-1-3.center.width-100[
+<br>
+[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)
+[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://scikit-hep.org/pyhf/)
+]
 
 ---
 class: end-slide, center
