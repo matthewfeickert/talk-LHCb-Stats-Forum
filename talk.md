@@ -56,10 +56,11 @@ NYU
 # Recent Scikit-HEP project
 
 .kol-1-2.left[
+<br><br>
 .bold[Scikit-HEP:]<br>
 A community-driven and community-oriented project with the aim of providing Particle Physics at large with an ecosystem for data analysis in Python
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 .bold[pyhf:]<br>
 A pure-python implementation of the widely-used HistFactory p.d.f. template described in [CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)
 ]
@@ -226,8 +227,9 @@ Gain this through the frameworks creating _computational directed acyclic graphs
 <br>
 # Why are you talking at an LHCb meeting then?
 
-- Have been told that LHCb uses binned models for _some_ analyses
-- At CHEP 2019 was approached by one such analyst
+- LHCb uses binned models for _some_ analyses
+   - Perhaps useful in those cases? Let's talk.
+- At CHEP 2019 was approached by analyst of such an analysis
 
 ---
 # Live demo time!
@@ -237,6 +239,16 @@ Gain this through the frameworks creating _computational directed acyclic graphs
 .center.bold[Just click the button!]<br><br><br>
 
 .center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/master?urlpath=lab)]
+
+---
+# From spec to model with Python API
+
+.center.width-70[![model_from_spec](figures/carbon_model_from_spec.png)]
+
+- Build workspace from spec
+- From workspace:
+   - Construct model
+   - Get data (observations + auxiliary measurements)
 
 ---
 # JSON Patch for new signal models
@@ -307,7 +319,7 @@ Gain this through the frameworks creating _computational directed acyclic graphs
 ]
 .kol-2-3[
 .center.width-100[![demo_interval](figures/carbon_interval_estimation.png)]
-.left[From demo: invert tests to get expected (Brazil band) and observed $95\%\\, \\mathrm{CL}$ upper limits on $\mu$]
+.left[From demo: invert tests to get expected ([Brazil band](https://arxiv.org/abs/1306.3117)) and observed $95\%\\, \\mathrm{CL}$ upper limits on $\mu$]
 ]
 
 ---
