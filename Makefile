@@ -11,3 +11,8 @@ decktape: talk.md
 	https://matthewfeickert.github.io/${current_dir}/index.html?p=talk.md \
 	talk.pdf
 	rsync talk.pdf Feickert_LHCb-Stats-WG_2019-11-25.pdf
+
+decktape_local: talk.md
+	docker run --rm -t --net=host -v ${dir_path}:/slides astefanutti/decktape:2.9.2 \
+	http://localhost:8001 \
+	localhost_draft.pdf
