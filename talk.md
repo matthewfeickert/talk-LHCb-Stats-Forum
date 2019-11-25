@@ -129,7 +129,7 @@ $$
 - First non-ROOT implementation of the HistFactory p.d.f. template
    - .width-40[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
 - pure-Python library as second implementation of HistFactory
-  - [`pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
+  - [`$ pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
 ]
 .kol-1-2.center.width-80[
@@ -270,26 +270,44 @@ Gain this through the frameworks creating _computational directed acyclic graphs
 ]
 
 ---
-# Uncertainty interval generation
+# Interval estimation
 
 .kol-1-2[
 .bold[(pseudo)Frequentist confidence intervals]
 
-- Use the $\\mathrm{CL}_{s}$ method to construct the interval
-   - $\\mathrm{CL}_{s}$ results in overcoverage by construction
-- pyhf offers a CLI for this in addition to the Python API
-   - `pyhf cls spec.json`
-- Returns (for $95\%\\, \\mathrm{CL}$ upper limit):
-   - Expected $\\mathrm{CL}_{s}$ values: $\pm 1\sigma$, $\pm 2\sigma$ (Brazil band), observed $\\mathrm{CL}_s$ value
+- Use the [$\\mathrm{CL}_{s}$ method](http://cds.cern.ch/record/451614) to construct the interval
+   - $\\mathrm{CL}_{s}$ results in [overcoverage by construction](https://indico.cern.ch/event/208901/contributions/1501047/) (at low signal-background discrimination)
+- pyhf offers an API & CLI for hypothesis test
+   - `$ pyhf cls spec.json`
+- Can *invert* the tests in order to obtain an interval with the correct coverage properties
+- pyhf plan is to factor out inference to another library and focus on modeling
 
 .bold[Bayesian credible intervals]
 
-- Currently don't support any API for this
-- pyhf plan is to factor out inference and focus on modeling
+- Currently don't support any API for this for same reason
 - c.f. [H. Dembinski, PyHEP 2019](https://indico.cern.ch/event/833895/contributions/3577810/)
 ]
 .kol-1-2[
 .center.width-100[![demo_CLI](figures/carbon_CLI_output.png)]
+.center[CLI to [`pyhf.utils.hypotest`](https://scikit-hep.org/pyhf/_generated/pyhf.utils.hypotest.html) returns  $\\mathrm{CL}_{s}$ values]
+]
+
+---
+# Interval estimation
+
+.kol-1-3[
+.bold[(pseudo)Frequentist confidence intervals]
+
+- Use the [$\\mathrm{CL}_{s}$ method](http://cds.cern.ch/record/451614) to construct the interval
+   - $\\mathrm{CL}_{s}$ results in [overcoverage by construction](https://indico.cern.ch/event/208901/contributions/1501047/) (at low signal-background discrimination)
+- pyhf offers an API & CLI for hypothesis test
+   - `$ pyhf cls spec.json`
+- Can *invert* the tests in order to obtain an interval with the correct coverage properties
+- pyhf plan is to factor out inference to another library and focus on modeling
+]
+.kol-2-3[
+.center.width-100[![demo_interval](figures/carbon_interval_estimation.png)]
+.left[From demo: invert tests to get expected (Brazil band) and observed $95\%\\, \\mathrm{CL}$ upper limits on $\mu$]
 ]
 
 ---
@@ -476,9 +494,11 @@ $ curl -sL https://doi.org/10.17182/hepdata.89408.v1/r2 | \
 1. F. James, Y. Perrin, L. Lyons, .italic[[Workshop on confidence limits: Proceedings](http://inspirehep.net/record/534129)], 2000.
 2. ROOT collaboration, K. Cranmer, G. Lewis, L. Moneta, A. Shibata and W. Verkerke, .italic[[HistFactory: A tool for creating statistical models for use with RooFit and RooStats](http://inspirehep.net/record/1236448)], 2012.
 3. L. Heinrich, H. Schulz, J. Turner and Y. Zhou, .italic[[Constraining $A_{4}$ Leptonic Flavour Model Parameters at Colliders and Beyond](https://inspirehep.net/record/1698425)], 2018.
-4. ATLAS collaboration, .italic[[Search for bottom-squark pair production with the ATLAS detector in final states containing Higgs bosons, b-jets and missing transverse momentum](http://inspirehep.net/record/1748602)], 2019
-5. ATLAS collaboration, .italic[[Reproducing searches for new physics with the ATLAS experiment through publication of full statistical likelihoods](https://cds.cern.ch/record/2684863)], 2019
-6. ATLAS collaboration, .italic[[Search for bottom-squark pair production with the ATLAS detector in final states containing Higgs bosons, b-jets and missing transverse momentum: HEPData entry](https://www.hepdata.net/record/ins1748602)], 2019
+4. A. Read, .italic[[Modified frequentist analysis of search results (the $\\mathrm{CL}_{s}$ method)](http://cds.cern.ch/record/451614)], 2000.
+5. K. Cranmer, .italic[[CERN Latin-American School of High-Energy Physics: Statistics for Particle Physicists](https://indico.cern.ch/event/208901/contributions/1501047/)], 2013.
+6. ATLAS collaboration, .italic[[Search for bottom-squark pair production with the ATLAS detector in final states containing Higgs bosons, b-jets and missing transverse momentum](http://inspirehep.net/record/1748602)], 2019
+7. ATLAS collaboration, .italic[[Reproducing searches for new physics with the ATLAS experiment through publication of full statistical likelihoods](https://cds.cern.ch/record/2684863)], 2019
+8. ATLAS collaboration, .italic[[Search for bottom-squark pair production with the ATLAS detector in final states containing Higgs bosons, b-jets and missing transverse momentum: HEPData entry](https://www.hepdata.net/record/ins1748602)], 2019
 
 ---
 
