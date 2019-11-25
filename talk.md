@@ -270,26 +270,44 @@ Gain this through the frameworks creating _computational directed acyclic graphs
 ]
 
 ---
-# Uncertainty interval generation
+# Interval estimation
 
 .kol-1-2[
 .bold[(pseudo)Frequentist confidence intervals]
 
 - Use the $\\mathrm{CL}_{s}$ method to construct the interval
    - $\\mathrm{CL}_{s}$ results in overcoverage by construction
-- pyhf offers a CLI for this in addition to the Python API
+- pyhf offers an API & CLI for hypothesis test
    - `$ pyhf cls spec.json`
-- Returns (for $95\%\\, \\mathrm{CL}$ upper limit):
-   - Expected $\\mathrm{CL}_{s}$ values: $\pm 1\sigma$, $\pm 2\sigma$ (Brazil band), observed $\\mathrm{CL}_s$ value
+- Can *invert* the tests in order to obtain an interval with the correct coverage properties
+- pyhf plan is to factor out inference to another library and focus on modeling
 
 .bold[Bayesian credible intervals]
 
-- Currently don't support any API for this
-- pyhf plan is to factor out inference and focus on modeling
+- Currently don't support any API for this for same reason
 - c.f. [H. Dembinski, PyHEP 2019](https://indico.cern.ch/event/833895/contributions/3577810/)
 ]
 .kol-1-2[
 .center.width-100[![demo_CLI](figures/carbon_CLI_output.png)]
+.center[CLI to [`pyhf.utils.hypotest`](https://scikit-hep.org/pyhf/_generated/pyhf.utils.hypotest.html) returns  $\\mathrm{CL}_{s}$ values]
+]
+
+---
+# Interval estimation
+
+.kol-1-3[
+.bold[(pseudo)Frequentist confidence intervals]
+
+- Use the $\\mathrm{CL}_{s}$ method to construct the interval
+   - $\\mathrm{CL}_{s}$ results in overcoverage by construction
+- pyhf offers an API & CLI for hypothesis test
+   - `$ pyhf cls spec.json`
+- Can *invert* the tests in order to obtain an interval with the correct coverage properties
+- pyhf plan is to factor out inference to another library and focus on modeling
+]
+.kol-2-3[
+.center.width-100[![demo_CLI](figures/carbon_interval_estimation.png)]
+.left[From demo: invert tests to get expected (Brazil band) and observed $95\%\\, \\mathrm{CL}$ upper limits on $\mu$]
 ]
 
 ---
