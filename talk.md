@@ -365,7 +365,7 @@ Gain this through the frameworks creating _computational directed acyclic graphs
    - Contours: .root[█] original ROOT+XML, .pyhf[█] pyhf JSON, .roundtrip[█] JSON converted back to ROOT+XML
 <!--  -->
 .right.width-80[
-[![flowchart](figures/process.png)](https://cds.cern.ch/record/2684863)
+[![flowchart](figures/process.svg)](https://cds.cern.ch/record/2684863)
 ]
 
 ---
