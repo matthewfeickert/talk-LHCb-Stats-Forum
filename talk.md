@@ -9,7 +9,7 @@ count: false
 University of Illinois at Urbana-Champaign
 
 <br><br>
-[LHCb Statistics Forum](https://talk-event-url)
+[LHCb Statistics Working Group](https://indico.cern.ch/event/863729/contributions/3639915/)
 
 November 25th, 2019
 
