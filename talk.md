@@ -129,7 +129,7 @@ $$
 - First non-ROOT implementation of the HistFactory p.d.f. template
    - .width-40[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
 - pure-Python library as second implementation of HistFactory
-  - [`pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
+  - [`$ pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
 ]
 .kol-1-2.center.width-80[
@@ -278,7 +278,7 @@ Gain this through the frameworks creating _computational directed acyclic graphs
 - Use the $\\mathrm{CL}_{s}$ method to construct the interval
    - $\\mathrm{CL}_{s}$ results in overcoverage by construction
 - pyhf offers a CLI for this in addition to the Python API
-   - `pyhf cls spec.json`
+   - `$ pyhf cls spec.json`
 - Returns (for $95\%\\, \\mathrm{CL}$ upper limit):
    - Expected $\\mathrm{CL}_{s}$ values: $\pm 1\sigma$, $\pm 2\sigma$ (Brazil band), observed $\\mathrm{CL}_s$ value
 
