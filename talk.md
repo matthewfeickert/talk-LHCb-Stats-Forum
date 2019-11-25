@@ -164,6 +164,50 @@ $$
 ]
 
 ---
+# Automatic differentiation
+
+With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
+
+$$
+\frac{\partial L}{\partial \mu}, \frac{\partial L}{\partial \theta_{i}}
+$$
+
+.grid[
+.kol-1-2[
+
+<br><br>
+Gain this through the frameworks creating _computational directed acyclic graphs_ and then applying the chain rule (to the operations)
+]
+.kol-1-2[
+.center.width-80[![DAG](figures/directed_acyclic_graph.png)]
+.center[Simple example graph]
+]
+]
+
+.footnote[[Image credit: Alan Du](http://www.columbia.edu/~ahd2125/post/2015/12/5/)]
+
+---
+# Automatic differentiation
+
+With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
+
+$$
+\frac{\partial L}{\partial \mu}, \frac{\partial L}{\partial \theta_{i}}
+$$
+
+.grid[
+.kol-1-2[
+
+<br><br>
+Gain this through the frameworks creating _computational directed acyclic graphs_ and then applying the chain rule (to the operations)
+]
+.kol-1-2[
+.center.width-80[![DAG](figures/computational_graph.png)]
+.center[HistFactory likelihood]
+]
+]
+
+---
 # Will pyhf extend to unbinned models?
 
 <br>
@@ -196,45 +240,6 @@ $$
 .center.width-70[[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthewfeickert/talk-LHCb-Stats-Forum/drafts/add-revisions?urlpath=lab)]
 
 ---
-# How to combine likelihoods?
-
-- Essentially just concatenate them
-
-<br><br>
-# Is there a pyhf utility for this yet?
-
-- No, but there is a PR to add this functionality into the CLI
-   - [scikit-hep/pyhf PR #617](https://github.com/scikit-hep/pyhf/pull/617)
-- `$ pyhf spec combine spec1.json spec2.json`
-
----
-# Uncertainty interval generation
-
-.kol-1-2[
-.bold[(pseudo)Frequentist confidence intervals]
-
-- Use the $\\mathrm{CL}_{s}$ method to construct the interval
-   - $\\mathrm{CL}_{s}$ results in overcoverage by construction
-- pyhf offers a CLI for this in addition to the Python API
-   - `pyhf cls spec.json`
-- Returns (for $95\%\\, \\mathrm{CL}$ upper limit):
-   - Expected $\\mathrm{CL}_{s}$ values: $\pm 1\sigma$, $\pm 2\sigma$ (Brazil band), observed $\\mathrm{CL}_s$ value
-
-.bold[Bayesian credible intervals]
-
-- Currently don't support any API for this
-- pyhf plan is to factor out inference and focus on modeling
-- c.f. [H. Dembinski, PyHEP 2019](https://indico.cern.ch/event/833895/contributions/3577810/)
-]
-.kol-1-2[
-.center.width-100[![demo_CLI](figures/carbon_CLI_output.png)]
-]
-
-<!-- - If the likelihood function was stored merely as a function of the model parameters, then it would not be possible to compute coverage probability for frequentist intervals generated from the likelihood function. -->
-<!-- - JSON likelihood contains the data -->
-<!-- - Possible to compute the coverage probability -->
-
----
 # JSON Patch for new signal models
 <!--  -->
 .kol-1-2[
@@ -263,6 +268,46 @@ $$
 .kol-1-2[
 .center.width-50[![reinterpretation_cartoon](figures/reinterpretation_cartoon.png)]
 .center[Recast analysis (model B)]
+]
+
+---
+# How to combine likelihoods?
+
+.kol-1-2[
+<br><br>
+- Essentially just concatenate them
+- As the channels are different, then just add the lists
+]
+.kol-1-2[
+.left.width-80[![demo_JSON](figures/carbon_JSON_spec_annotated.png)]
+]
+# Is there a pyhf utility to make this easy?
+
+- Not yet, but there is a PR to add this functionality into the CLI
+   - [scikit-hep/pyhf PR #617](https://github.com/scikit-hep/pyhf/pull/617)
+- `$ pyhf spec combine spec1.json spec2.json`
+
+---
+# Uncertainty interval generation
+
+.kol-1-2[
+.bold[(pseudo)Frequentist confidence intervals]
+
+- Use the $\\mathrm{CL}_{s}$ method to construct the interval
+   - $\\mathrm{CL}_{s}$ results in overcoverage by construction
+- pyhf offers a CLI for this in addition to the Python API
+   - `pyhf cls spec.json`
+- Returns (for $95\%\\, \\mathrm{CL}$ upper limit):
+   - Expected $\\mathrm{CL}_{s}$ values: $\pm 1\sigma$, $\pm 2\sigma$ (Brazil band), observed $\\mathrm{CL}_s$ value
+
+.bold[Bayesian credible intervals]
+
+- Currently don't support any API for this
+- pyhf plan is to factor out inference and focus on modeling
+- c.f. [H. Dembinski, PyHEP 2019](https://indico.cern.ch/event/833895/contributions/3577810/)
+]
+.kol-1-2[
+.center.width-100[![demo_CLI](figures/carbon_CLI_output.png)]
 ]
 
 ---
@@ -333,6 +378,48 @@ Through pyhf are able to provide:
 class: end-slide, center
 
 Backup
+
+---
+# Why is the likelihood important?
+
+<br>
+
+.kol-1-2.width-90[
+- High information-density summary of analysis
+- Almost everything we do in the analysis ultimately affects the likelihood and is encapsulated in it
+   - Trigger
+   - Detector
+   - Systematic Uncertainties
+   - Event Selection
+- Unique representation of the analysis to preserve
+]
+.kol-1-2.width-90[
+<br><br><br>
+[![likelihood_connections](figures/likelihood_connections.png)](https://indico.cern.ch/event/839382/contributions/3521168/)
+]
+
+---
+# Likelihood serialization...
+
+.center[...making good on [19 year old agreement to publish likelihoods](https://indico.cern.ch/event/746178/contributions/3396797/)]
+
+<br>
+
+.center.width-80[
+[![likelihood_publishing_agreement](figures/likelihood_publishing_agreement.png)](https://cds.cern.ch/record/411537)
+]
+
+.center[([1st Workshop on Confidence Limits, CERN, 2000](http://inspirehep.net/record/534129))]
+
+.bold[This hadn't been done in HEP until now]
+- In an "open world" of statistics this is a difficult problem to solve
+- What to preserve and how? All of ROOT?
+- Idea: Focus on a single more tractable binned model first
+
+---
+# HistFactory likelihood graph
+
+.center.width-60[![DAG](figures/computational_graph.png)]
 
 ---
 # ROOT + XML to JSON and back
